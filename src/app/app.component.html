@@ -1,0 +1,66 @@
+<div class="toolbar">
+    <div class="nav-bar">State & District Maintenance</div>
+</div>
+
+<div class="content" role="main">
+    <div>
+        <table class="table">
+            <tr>
+                <td class="state-header">State</td>
+                <td class="data-row">
+                    <mat-form-field class="selector" appearance="none">
+                        <mat-label></mat-label>
+                        <mat-select style="color: white;" [(ngModel)]="selectedState" (selectionChange)="onStateChange()" name="state">
+                            <mat-option *ngFor="let state of states" [value]="state">
+                                {{state}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <br />
+                    <button class="btn-add-new" (click)="showState = true" mat-raised-button>Add New</button>
+                    <div *ngIf="showState" class="state-input">
+                        <mat-form-field class="state-full-width">
+                            <mat-label>State Name</mat-label>
+                            <input type="text" [(ngModel)]="newState" placeholder="State Name" id="addStateField" aria-label="State" matInput/>
+                        </mat-form-field>
+                        <button mat-icon-button color="primary" (click)="addState()" aria-label="icon button with a done icon">
+                          <mat-icon>done</mat-icon>
+                        </button>
+                        <button mat-icon-button color="primary" (click)="hideStateField()" aria-label="icon button with a close icon">
+                          <mat-icon>close</mat-icon>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="district-header">District</td>
+                <td class="data-row">
+                    <mat-form-field class="selector" appearance="none">
+                        <mat-label></mat-label>
+                        <mat-select [(ngModel)]="selectedDistrict" name="district">
+                            <mat-option *ngFor="let district of districtList" [value]="district">
+                                {{district}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <br />
+                    <button class="btn-add-new" (click)="showDistrict = true">Add New</button>
+
+                    <div class="district-input" *ngIf="showDistrict">
+                        <mat-form-field class="district-full-width">
+                            <mat-label>District Name</mat-label>
+                            <input type="text" [(ngModel)]="newDistrict" id="addDistrictField" placeholder="District Name" aria-label="District" matInput/>
+                        </mat-form-field>
+                        <button mat-icon-button color="primary" (click)="addDistrict()" aria-label="icon button with a done icon">
+                          <mat-icon>done</mat-icon>
+                        </button>
+                        <button mat-icon-button (click)="hideDistrictFied()" color="primary" aria-label="icon button with a close icon">
+                          <mat-icon>close</mat-icon>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

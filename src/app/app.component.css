@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.toolbar {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    /* display: table-cell; */
+    align-items: center;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+}
+
+.table {
+    margin-left: 280px !important;
+}
+
+.content {
+    display: flex;
+    margin: 82px auto 32px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-bar {
+    padding-top: 18px;
+}
+
+.state-header,
+.district-header {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    float: left;
+    width: 200px;
+    margin-left: 50px;
+    /* position: relative; */
+}
+
+.selector {
+    width: 200px;
+    /* background-color: red; */
+    background-color: rgb(84, 157, 240);
+    margin-left: 15px;
+    border-radius: 10px;
+    /* width: 250px; */
+    height: 55px;
+}
+
+.data-row {
+    vertical-align: baseline !important;
+    height: 245px;
+    min-height: 245px;
+    width: 800px;
+}
+
+.state-selector,
+.district-selector {
+    scrollbar-width: 0px;
+    color: white;
+    margin: 15px;
+    outline: none;
+    width: 180px;
+    height: 35px;
+    border: 1px solid #3f51b5;
+    background-color: #3f51b5;
+    ;
+    border-radius: 5px;
+}
+
+.btn-add-new {
+    color: white;
+    margin: 15px;
+    outline: none;
+    width: 200px;
+    /* width: 250px; */
+    height: 55px;
+    border: 1px solid rgb(59, 170, 197);
+    background-color: rgb(62, 184, 214);
+    border-radius: 5px;
+}
+
+.btn-add-new:hover {
+    color: white;
+    margin: 15px;
+    outline: none;
+    cursor: pointer;
+    background-color: rgb(84, 209, 240);
+    border-radius: 5px;
+}
+
+.district-input,
+.state-input {
+    margin: 15px;
+    width: 350px;
+}
