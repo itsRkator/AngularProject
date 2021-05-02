@@ -53,14 +53,28 @@ export class AppComponent {
   onStateChange(){
     this.districtList = this.districtByState[this.selectedState];
   }
-  addState(){
+  addState() {
+    if (!this.newState) {
+      alert("Please Provide State Name.");
+      this.showState = false;
+      this.newState = "";
+      return;
+    }
     this.states.push(this.newState);
-    this.districtByState[this.newState]=[];
+    this.states.sort();
+    this.districtByState[this.newState] = [];
     this.showState = false;
     this.newState = "";
   }
-  addDistrict(){
+  addDistrict() {
+    if (!this.newDistrict) {
+      alert("Please Provide District Name.");
+      this.showDistrict = false;
+      this.newDistrict = "";
+      return;
+    }
     this.districtByState[this.selectedState].push(this.newDistrict);
+    this.districtByState[this.selectedState].sort();
     this.showDistrict = false;
     this.newDistrict = "";
   }
